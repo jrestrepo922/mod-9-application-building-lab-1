@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sender-message-component',
@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sender-message-component.component.css']
 })
 export class SenderMessageComponentComponent implements OnInit {
+  @Input() message = {
+    sender: { firstName: "Ludovic" },
+    text: "Message from Ludovic",
+    conversationId: 1,
+    sequenceNumber: 0,
+  }
 
   constructor() { }
 

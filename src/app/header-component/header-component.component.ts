@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponentComponent implements OnInit {
 
+  activeUser = {
+    firstName: "Maria", 
+  }
+
   constructor() { }
 
   ngOnInit(): void {
