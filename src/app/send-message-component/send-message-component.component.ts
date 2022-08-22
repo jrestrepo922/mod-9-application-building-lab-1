@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./send-message-component.component.css']
 })
 export class SendMessageComponentComponent implements OnInit {
+  messageString?: string = "" ; 
 
   constructor() { }
 

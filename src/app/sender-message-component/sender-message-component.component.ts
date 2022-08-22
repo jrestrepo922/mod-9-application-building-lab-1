@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Message } from '../message';
 
 @Component({
   selector: 'app-sender-message-component',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./sender-message-component.component.css']
 })
 export class SenderMessageComponentComponent implements OnInit {
-  @Input() message = {
+  @Input() message: Message = {
     sender: { firstName: "Ludovic" },
     text: "Message from Ludovic",
     conversationId: 1,
@@ -16,6 +17,13 @@ export class SenderMessageComponentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getCurrentStyles(){
+    let currentStyles = {
+      'background-color': this.message.sender.isOnline ? 'blue' :  'red', 
+    }; 
+    return currentStyles; 
   }
 
 }

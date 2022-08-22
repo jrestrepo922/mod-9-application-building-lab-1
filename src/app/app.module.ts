@@ -13,6 +13,8 @@ import { UserMessageComponentComponent } from './user-message-component/user-mes
 import { SenderMessageComponentComponent } from './sender-message-component/sender-message-component.component';
 import { ContactComponentComponent } from './contact-component/contact-component.component';
 import { HeaderComponentComponent } from './header-component/header-component.component';
+import { FormsModule } from '@angular/forms';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,13 @@ import { HeaderComponentComponent } from './header-component/header-component.co
     UserMessageComponentComponent,
     SenderMessageComponentComponent,
     ContactComponentComponent,
-    HeaderComponentComponent
+    HeaderComponentComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
