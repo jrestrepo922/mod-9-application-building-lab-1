@@ -1,8 +1,10 @@
 <div class="container">
     <div class="row">
       <div class="col-2 p-3"></div>
-      <div class="col-10 p-3 border rounded-5">
+      <div class="col-8 p-3 border rounded-5">
         <span>{{message.text}}</span>
+        
       </div>
+      <button class="col-2 btn btn-danger" (click)="deleteComment()" name="delete-user-comment">x</button>
     </div>
   </div>

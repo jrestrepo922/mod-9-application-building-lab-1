@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { Message } from '../message';
+import { MessagingDataServiceService } from '../messaging-data-service.service';
 
 @Component({
   selector: 'app-user-message-component',
@@ -14,9 +16,16 @@ export class UserMessageComponentComponent implements OnInit {
     sequenceNumber: 2,
   }
 
-  constructor() { }
+  constructor(
+    private messagingSvce: MessagingDataServiceService,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
+  }
+
+  deleteComment(){
+    this.messagingSvce.deleteUserMessage(this.message); 
   }
 
 }

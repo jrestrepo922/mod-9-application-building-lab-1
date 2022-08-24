@@ -11,6 +11,8 @@ import { User } from '../user';
 })
 export class SendMessageComponentComponent implements OnInit {
   messageString: string = "" ; 
+  sequenceNumber: number = 2; 
+
  
 
   constructor(private loggingSvce: LoggingService,
@@ -22,8 +24,9 @@ export class SendMessageComponentComponent implements OnInit {
 
   onSendMessage(){
     // create a new message and send it to the messagingSvce
+    ++this.sequenceNumber;
     let maria: User = {firstName: "Maria"}; 
-    let newMessage: Message = new Message(maria, this.messageString, 10, 20); 
+    let newMessage: Message = new Message(maria, this.messageString, 1, this.sequenceNumber); 
     this.messagingSvce.addUserMessage(newMessage); 
     this.loggingSvce.log("Send Following message: "); 
     this.loggingSvce.log(this.messageString); 
